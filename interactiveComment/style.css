@@ -168,3 +168,12 @@ h6 {
     "header advert"
     "content footer";
 }
+
+.modal::backdrop{
+  background: rgb(0 0 0 / 0.4);
+}
+
+form {
+  display: grid;
+  gap: 1em;
+}
