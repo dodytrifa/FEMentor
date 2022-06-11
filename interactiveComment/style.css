@@ -177,3 +177,59 @@ form {
   display: grid;
   gap: 1em;
 }
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+/* trial another method */
+
+.container{
+  width: min(90%,1140px);
+  margin: 3rem auto;
+}
+
+.comment__container {
+  display: none;
+  position: relative;
+}
+
+.comment__container.opened{
+  display: block;
+}
+
+.comment__container::before {
+  content: "";
+  background-color: red;
+  position: absolute;
+  min-height: 100%;
+  width: 1px;
+  left: -10px;
+}
+
+.comment__container:not(:first-child){
+  margin: 1rem 0 0 3rem;
+}
+
+.comment__card {
+  padding: 24px;
+  background-color: blueviolet;
+  border: 1px solid grey;
+ border-radius: 16px; 
+}
+
+.comment__footer {
+  display: flex;
+  font-size: .8rem;
+ opacity: .6; 
+ gap: 24px;
+ justify-content: flex-end;
+ align-items: center;
+}
+
+.reply {
+  cursor:pointer;
+}
