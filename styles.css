@@ -1,12 +1,15 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 * {
-  margin:0;
+  margin: 0;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -15,16 +18,31 @@ body {
   -wekit-font-smoothin: antialiased;
 }
 
-img, picture,svg {
+img,
+picture,
+svg {
   display: block;
   max-width: 100%;
 }
 
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
-p, h1, h2, h3 {
+p,
+h1,
+h2,
+h3 {
   overflow-wrap: break-word;
 }
 
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
