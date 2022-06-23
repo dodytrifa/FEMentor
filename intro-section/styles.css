@@ -32,11 +32,26 @@ select {
   font: inherit;
 }
 
+ul {
+  display: inline;
+  list-style-type: none;
+}
+
 p,
 h1,
 h2,
 h3 {
   overflow-wrap: break-word;
+}
+
+.body-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.client-img {
+  display: flex;
+  align-items: center;
 }
 
 .attribution {

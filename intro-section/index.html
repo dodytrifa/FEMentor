@@ -11,10 +11,21 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-    <link rel="stylesheet" href="styles.css" />
+
     <title>Frontend Mentor | Intro section with dropdown navigation</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
   </head>
   <body>
     <nav>
@@ -40,14 +51,23 @@
         <li>Register</li>
       </ul>
     </nav>
-    <main>
-      <h1>Make remote work</h1>
+    <main class="body-wrapper">
+      <section>
+        <h1>Make remote work</h1>
+        <article>
+          Get your team in sync, no matter your location. Streamline processes,
+          create team rituals, and watch productivity soar.
+        </article>
+        <button>Learn more</button>
+        <article class="client-img">
+          <img src="/images/client-databiz.svg" alt="" />
+          <img src="/images/client-audiophile.svg" alt="" />
+          <img src="/images/client-meet.svg" alt="" />
+          <img src="/images/client-maker.svg" alt="" />
+        </article>
+      </section>
+      <img src="/images/image-hero-desktop.png" alt="" />
     </main>
-    <article>
-      Get your team in sync, no matter your location. Streamline processes,
-      create team rituals, and watch productivity soar.
-    </article>
-    <button>Learn more</button>
     <div class="attribution">Coded by <a href="#">Dody Tri Fatwadi</a>.</div>
   </body>
 </html>
