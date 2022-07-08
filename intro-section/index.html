@@ -17,26 +17,46 @@
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <link rel="stylesheet" href="styles.css" />
 
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
   </head>
   <body>
+    <img src="/intro-section/images/logo.svg" alt="" />
+    <div class="navbar">
+      <div class="dropdown">
+        <button class="dropbtn" onclick="myFunction()">Features
+          <i>
+            <img class="nav-icon" src="/intro-section/images/icon-arrow-down.svg" alt="" />
+          </i> 
+        </button>
+        <div class="dropdown-content" id="myDropdown">
+          <a href="#">Todo List</a>
+          <a href="#">Calendar</a>
+          <a href="#">Reminders</a>
+          <a href="#">Planning</a>
+        </div>
+        
+        <button class="dropbtn" onclick="myFunction()">Company
+         <i>
+          <img class="nav-icon" src="/intro-section/images/icon-arrow-down.svg" alt="" />
+         </i> 
+        </button>
+        <div class="dropdown-content" id="myDropdown">
+          <a href="#">History</a>
+          <a href="#">Our Team</a>
+          <a href="#">Blog</a>
+        </div>
+      </div> 
+      <a href="#careers">Careers</a>
+      <a href="#about">About</a>
+    </div>
+    
     <nav>
       <ul>
-        <img src="/intro-section/images/logo.svg" alt="" />
         <li>Features</li>
         <ul>
-          <li>Todo List</li>
-          <li>Calendar</li>
-          <li>Reminders</li>
-          <li>Planning</li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
         </ul>
         <li>Company</li>
         <ul>
@@ -51,6 +71,11 @@
         <li>Login</li>
         <li>Register</li>
       </ul>
+      <img src="/intro-section/images/icon-arrow-up.svg" alt="" />
+      <img src="/intro-section/images/icon-calendar.svg" alt="" />
+      <img src="/intro-section/images/icon-close-menu.svg" alt="" />
+      <img src="/intro-section/images/icon-planning.svg" alt="" />
+      <img src="/intro-section/images/icon-calendar.svg" alt="" />
     </nav>
     <main class="body-wrapper">
       <section>
@@ -65,16 +90,58 @@
           <img src="/intro-section/images/client-audiophile.svg" alt="" />
           <img src="/intro-section/images/client-meet.svg" alt="" />
           <img src="/intro-section/images/client-maker.svg" alt="" />
-          <img src="/intro-section/images/icon-arrow-down.svg" alt="" />
-          <img src="/intro-section/images/icon-arrow-up.svg" alt="" />
-          <img src="/intro-section/images/icon-calendar.svg" alt="" />
-          <img src="/intro-section/images/icon-close-menu.svg" alt="" />
-          <img src="/intro-section/images/icon-planning.svg" alt="" />
-          <img src="/intro-section/images/icon-calendar.svg" alt="" />
         </article>
       </section>
       <img src="/intro-section/images/image-hero-desktop.png" alt="" />
     </main>
     <div class="attribution">Coded by <a href="#">Dody Tri Fatwadi</a>.</div>
+    <script>
+      /* When the user clicks on the button, 
+      toggle between hiding and showing the dropdown content */
+      // function myFunction() {
+      //   document.getElementById("myDropdown").classList.toggle("show");
+      // }
+      // Close the dropdown if the user clicks outside of it
+      // window.onclick = function(event) {
+      //   if (!event.target.matches('.dropbtn')) {
+      //     var dropdowns = document.getElementsByClassName("dropdown-content");
+      //     var i;
+      //     for (i = 0; i < dropdowns.length; i++) {
+      //       var openDropdown = dropdowns[i];
+      //       if (openDropdown.classList.contains('show')) {
+      //         openDropdown.classList.remove('show');
+      //       }
+      //     }
+      //   }
+      // }
+
+      // Get all drop-down buttons
+const dropDownButtons = document.querySelectorAll(".dropbtn");
+// Get all drop down content elements.
+const dropDownContent = document.querySelectorAll(".dropdown-content");
+
+
+function handleClick(event) {
+  const main = event.target; // Use the event.target, the clicked element
+  const className = "show"; // Spcecify the class name one time
+  let myContent = null; // The drop down contents of the clicked item, if found
+  dropDownContent.forEach( elem => {
+    // Kludge: using parentNode since the clicked element is in it's own div.
+    // It would probably be better if the querySelector above selected
+    // the li-element, and then remove paretNode from the next statement.
+    if ( main.parentNode.contains(elem)) {
+      myContent = elem;
+    } else {
+      // Remove the class from every content except the clicked one.
+      elem.classList.remove(className);
+    }
+  });
+  // If the clicked have content, troggle if it is shown or not.
+  if (myContent) myContent.classList.toggle(className);
+}
+
+dropDownButtons.forEach( elem => elem.addEventListener("click",  handleClick));
+
+    </script>
   </body>
 </html>
