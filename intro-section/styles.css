@@ -77,6 +77,7 @@ p{
 .client-img {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .attribution {
@@ -89,6 +90,10 @@ p{
 
 .nav-icon {
   display: inline;
+}
+
+.cta-button {
+  width: fit-content;
 }
 
 /* improvement */
