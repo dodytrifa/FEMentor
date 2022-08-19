@@ -62,6 +62,7 @@ p{
   display: flex;
   flex-direction: column;
   /* align-content: space-between; */
+  padding: 0px 14px;
   
 }
 
@@ -94,12 +95,23 @@ p{
 
 .cta-button {
   width: fit-content;
+  background-color: black;
+  border-radius: 12px;
+  color: white; 
+  padding: 10px 12px;
+}
+
+.hero-img {
+  overflow: clip;
+  /* max-height: max-content; */
 }
 
 /* improvement */
 .navbar {
-  overflow: hidden;
+  /* overflow: hidden; */
   font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .navbar a {
@@ -152,4 +164,11 @@ p{
 
 .show {
   display: block;
+}
+
+@media screen and(max-width: 375px) {
+  .navbar{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
