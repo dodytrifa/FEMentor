@@ -11,6 +11,9 @@
 html,
 body {
   height: 100%;
+  font-size: 13px;
+  display: grid;
+  place-content: center;
 }
 
 body {
@@ -42,9 +45,96 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
+  z-index: 1;
+  color: aliceblue;
 }
 
-#root,
-#__next {
-  isolation: isolate;
+.max-width-wrapper {
+  max-width: 70%;
+  margin: 0 auto;
+  gap: 2rem;
+  display: grid;
+  grid-template-areas:
+  'first first second fifth'
+  'third fourth fourth fifth';
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.profpic {
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.first-comment {
+  grid-area: first;
+  background: hsl(263, 55%, 52%);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.quotation {
+  position: absolute;
+  left: 40%;
+
+}
+
+.second-comment {
+  grid-area: second;
+  background: hsl(217, 19%, 35%);
+  padding: 2rem;
+  border-radius: 1rem;
+
+
+}
+.third-comment {
+  grid-area: third ;
+  background: hsl(0, 0%, 100%);
+  padding: 2rem;
+  border-radius: 1rem;
+  border: solid 1px hsl(217, 19%, 35%);
+
+}
+.fourth-comment {
+  padding: 2rem;
+  grid-area: fourth;
+  background: hsl(219, 29%, 14%);
+  border-radius: 1rem;
+}
+.fifth-comment {
+  padding: 2rem;
+  grid-area: fifth;
+  background: hsl(0, 0%, 100%);
+  border-radius: 1rem;
+  border: solid 1px hsl(217, 19%, 35%);
+}
+
+@media screen and (max-width: 375px) {
+  body {
+
+    display: flex;
+    flex-direction: column;
+  }
+  .max-width-wrapper {
+    display: grid;
+    grid-template-areas:
+    'first'
+    'second'
+    'third'
+    'fourth'
+    'fifth';
+    /* grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(5, 1fr); */
+  }
+  .first-comment {
+    grid-area: first;
+  }
+  .second-comment {
+    grid-area: second;
+  }
 }
